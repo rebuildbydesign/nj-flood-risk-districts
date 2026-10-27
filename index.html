@@ -34,9 +34,9 @@ a { color: inherit; }
 .hero { background: #000; color: #fff; padding: 56px 0 48px; }
 .hero .inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
 .kicker { font-size: 14px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--later); }
-.bracket { position: relative; display: inline-block; background: #fff; color: #000; font-weight: 900; text-transform: uppercase; line-height: 1.05; padding: .32em .55em .28em .6em; margin: .3em 0 0 .3em; }
-.bracket::before { content: ""; position: absolute; left: -.3em; top: -.3em; right: -.12em; height: .2em; background: linear-gradient(90deg, #ef4b3f, #f2955f); }
-.bracket::after { content: ""; position: absolute; left: -.3em; top: -.3em; width: .2em; bottom: -.12em; background: #ef4b3f; }
+.bracket { position: relative; display: inline-block; background: #fff; color: #000; font-weight: 900; text-transform: uppercase; line-height: 1.05; padding: .45em .28em .46em .68em; margin: .44em 0 0 .4em; }
+.bracket::before { content: ""; position: absolute; left: -.4em; top: -.44em; right: .38em; height: .44em; background: linear-gradient(90deg, #e14029, #f5ac4a); }
+.bracket::after { content: ""; position: absolute; left: -.4em; top: -.44em; width: .4em; bottom: .2em; background: #e14029; }
 .hero h1 { font-size: clamp(28px, 4.2vw, 46px); margin: 20px 0 22px; }
 .hero .lede { font-size: 19px; color: #c9cdd8; max-width: 560px; }
 .state { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 26px; }
@@ -147,9 +147,10 @@ section.block { padding: 48px 0; border-bottom: 1px solid var(--border); }
   --town: #f5f6f8; --townline: #c3c8d3; --outline: #000; --flood-op: .4;
 }
 .k-top { flex: none; }
-.k-bracket { position: relative; display: inline-block; background: #fff; color: #000; font-weight: 900; text-transform: uppercase; line-height: 1; white-space: nowrap; padding: .32em .55em .28em .6em; margin: .3em 0 0 .3em; }
-.k-bracket::before { content: ""; position: absolute; left: -.3em; top: -.3em; right: -.12em; height: .26em; background: linear-gradient(90deg, #ef4b3f, #f2955f); }
-.k-bracket::after { content: ""; position: absolute; left: -.3em; top: -.3em; width: .26em; bottom: -.12em; background: #ef4b3f; }
+/* bracket matches the NJ Underwater banner: white box flush in the corner of the L, running past both bar ends */
+.k-bracket { position: relative; display: inline-block; background: #fff; color: #000; font-weight: 900; text-transform: uppercase; line-height: 1; white-space: nowrap; padding: .45em .28em .46em .68em; margin: .44em 0 0 .4em; }
+.k-bracket::before { content: ""; position: absolute; left: -.4em; top: -.44em; right: .38em; height: .44em; background: linear-gradient(90deg, #e14029, #f5ac4a); }
+.k-bracket::after { content: ""; position: absolute; left: -.4em; top: -.44em; width: .4em; bottom: .2em; background: #e14029; }
 .k-band { flex: none; background: linear-gradient(90deg, #dd4000, #f27407 35%, #f2a007 70%, #f7c320); color: #000; display: flex; justify-content: space-between; align-items: center; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
 .k-band span { white-space: nowrap; }
 .k-band img { display: block; border-left: 2px solid #000; }
@@ -221,9 +222,9 @@ section.block { padding: 48px 0; border-bottom: 1px solid var(--border); }
 .story .k-ask2 .bill { display: block; color: #f2a007; font-size: 34px; font-weight: 700; letter-spacing: .06em; margin-bottom: 14px; }
 .story .k-ask2 .lead, .story .k-ask2 .tail { display: block; font-size: 44px; text-wrap: balance; }
 /* the act name in the same bracket as the headline */
-.story .k-ask2 .act { position: relative; display: block; background: #fff; color: #000; font-size: 64px; line-height: 1.02; padding: .22em .4em .2em .45em; margin: .45em 0 .35em .3em; text-wrap: balance; }
-.story .k-ask2 .act::before { content: ""; position: absolute; left: -.3em; top: -.3em; right: -.12em; height: .2em; background: linear-gradient(90deg, #ef4b3f, #f2955f); }
-.story .k-ask2 .act::after { content: ""; position: absolute; left: -.3em; top: -.3em; width: .2em; bottom: -.12em; background: #ef4b3f; }
+.story .k-ask2 .act { position: relative; display: block; background: #fff; color: #000; font-size: 64px; line-height: 1.02; padding: .45em .28em .46em .68em; margin: .44em 0 .35em .4em; text-wrap: balance; }
+.story .k-ask2 .act::before { content: ""; position: absolute; left: -.4em; top: -.44em; right: .38em; height: .44em; background: linear-gradient(90deg, #e14029, #f5ac4a); }
+.story .k-ask2 .act::after { content: ""; position: absolute; left: -.4em; top: -.44em; width: .4em; bottom: .2em; background: #e14029; }
 .story .k-legend { font-size: 32px; margin-top: 16px; gap: .2em .9em; justify-content: center; }
 .story .k-credit { font-size: 30px; padding-top: 16px; }
 /* tall band, text at the top, so the URL ends above the reply bar */
