@@ -1,0 +1,133 @@
+/* District sheet additions; colours come from styles.css tokens only */
+
+.reps-row { display: grid; grid-template-columns: 1fr 2fr; }
+
+.towns-split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+.towns-maps {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 16px 20px;
+  border-right: 1px solid var(--border-light);
+}
+.dm-map { flex: 1; min-width: 0; height: auto; }
+.loc-map { width: 92px; flex-shrink: 0; height: auto; }
+
+.loc-d { fill: var(--surface-alt); stroke: #fff; stroke-width: 0.6; }
+.loc-d.on { fill: var(--flood-2050); }
+.loc-ring { fill: none; stroke: var(--flood-2050); stroke-width: 1.5; }
+
+.dm-town { fill: var(--surface); stroke: var(--border); stroke-width: 1; }
+.dm-outline { fill: none; stroke: var(--flood-2050); stroke-width: 2.5; }
+.dm-label { font-size: 13px; font-weight: 700; fill: var(--text); text-anchor: middle; paint-order: stroke; stroke: #fff; stroke-width: 3px; }
+
+.towns-table { padding: 8px 0; }
+.towns-table td a { color: var(--text); font-weight: 600; text-decoration: underline; text-decoration-color: var(--border); }
+.part-tag {
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text-muted); background: var(--surface); border: 1px solid var(--border-light);
+  border-radius: 3px; padding: 0 4px; margin-left: 4px;
+}
+.town-note { font-size: 0.78rem; color: var(--text-muted); line-height: 1.45; padding: 8px 16px 0; }
+
+.bill-line {
+  font-size: 0.82rem; line-height: 1.5; color: var(--text-mid);
+  padding: 14px 24px; border-bottom: 1px solid var(--border); background: var(--surface);
+}
+.bill-line a { color: var(--crisis); }
+
+@media (max-width: 720px) {
+  .reps-row, .towns-split { grid-template-columns: 1fr; }
+  .towns-maps { border-right: none; border-bottom: 1px solid var(--border-light); }
+}
+
+/* Policy recommendation + bond act buckets */
+.policy-wrap { padding: 20px 24px 22px; border-bottom: 1px solid var(--border); }
+.policy-kicker {
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--crisis); margin-bottom: 6px;
+}
+.policy-statement {
+  font-size: 1.25rem; font-weight: 800; line-height: 1.3; text-transform: uppercase;
+  color: var(--text); margin-bottom: 18px;
+}
+.bond-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.bond-card {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--border); border-top: 4px solid var(--text);
+  border-radius: var(--radius); padding: 12px 14px; background: var(--bg);
+}
+.bond-amt { font-size: 1.6rem; font-weight: 800; line-height: 1.1; color: var(--crisis); }
+.bond-use { font-size: 0.9rem; font-weight: 700; color: var(--text); margin: 2px 0 8px; }
+.bond-subs { list-style: none; padding: 0; margin: 0 0 10px; flex: 1; }
+.bond-subs li {
+  font-size: 0.8rem; line-height: 1.4; color: var(--text-mid);
+  padding: 4px 0; border-top: 1px solid var(--border-light);
+}
+.bond-tie {
+  font-size: 0.8rem; line-height: 1.4; color: var(--text);
+  background: var(--surface); border-radius: var(--radius); padding: 8px 10px;
+}
+.bond-tie strong { color: var(--flood-2050); }
+.bond-control { margin-top: 16px; }
+.bond-control-title { font-size: 0.9rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+.bond-steps {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+}
+.bond-steps li {
+  display: flex; gap: 8px; align-items: flex-start;
+  font-size: 0.8rem; line-height: 1.4; color: var(--text-mid);
+  background: var(--surface); border-radius: var(--radius); padding: 10px;
+}
+.step-n {
+  flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--text); color: #fff; font-size: 0.72rem; font-weight: 800;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.bond-note { font-size: 0.78rem; line-height: 1.45; color: var(--text-muted); margin-top: 10px; }
+.bond-note a { color: var(--crisis); }
+
+@media (max-width: 720px) {
+  .bond-cards { grid-template-columns: 1fr; }
+  .bond-steps { grid-template-columns: 1fr 1fr; }
+  .policy-statement { font-size: 1.05rem; }
+}
+
+/* numbered town markers (districts with many towns) */
+.dm-num circle { fill: var(--text); stroke: #fff; stroke-width: 1.5; }
+.dm-num text { fill: #fff; font-size: 10px; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
+.town-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 18px; height: 18px; margin-right: 6px; border-radius: 9px;
+  background: var(--text); color: #fff; font-size: 0.66rem; font-weight: 800;
+}
+.none-cell { color: var(--text-muted); font-style: italic; text-align: center; }
+
+/* print / Export PDF: letter portrait, the 960px sheet scaled to fit, nothing cut off */
+@page { size: letter; margin: 0.35in; }
+@media print {
+  html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .fact-sheet-wrap { max-width: 960px; width: 960px; zoom: 0.78; }
+  .section-title { break-after: avoid; }
+  .bond-card, .bond-steps li, .risk-card, .metric-cell, .asset-tbl tr, .fs-footer, .bond-control, .policy-wrap { break-inside: avoid; }
+}
+
+/* phone: overview 2 x 2, banner fits, tables scroll instead of clipping */
+@media (max-width: 720px) {
+  .metrics-strip { display: grid; grid-template-columns: 1fr 1fr; }
+  .metric-cell { border-bottom: 1px solid var(--border-light); }
+  .fs-header-top { flex-wrap: wrap; gap: 10px; }
+  .fs-header-banner { max-width: 100%; height: auto; }
+  .asset-col, .towns-table { overflow-x: auto; }
+  .asset-tbl { font-size: 0.74rem; }
+  .asset-tbl th, .asset-tbl td { padding-left: 6px; padding-right: 6px; }
+  .bond-steps { grid-template-columns: 1fr; }
+}
+@media print { .asset-two-col { break-inside: avoid; } }
+.dm-leader { stroke: var(--text); stroke-width: 1; }
+.dm-anchor { fill: var(--text); }
