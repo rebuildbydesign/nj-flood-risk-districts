@@ -259,10 +259,11 @@ section.block { padding: 48px 0; border-bottom: 1px solid var(--border); }
 .poster .sub { font-size: 17px; color: var(--mute); margin-top: 8px; }
 /* stats stacked beside the map, so the map gets the height */
 .poster .top { display: flex; gap: 18px; flex: 1; min-height: 0; margin-top: 14px; }
-.poster .stats { display: grid; grid-template-columns: 1fr; align-content: center; gap: 12px; width: 200px; flex: none; }
-.poster .stat { background: var(--panel); padding: 12px 14px; border-top: 5px solid #d4d8e0; }
+/* start-aligned: centred, a tall stack spilled up over the "towns in" line */
+.poster .stats { display: grid; grid-template-columns: 1fr; align-content: start; gap: 10px; width: 200px; flex: none; }
+.poster .stat { background: var(--panel); padding: 8px 12px 10px; border-top: 5px solid #d4d8e0; }
 .poster .stat.now { border-color: #dd4000; } .poster .stat.later { border-color: #f2a007; }
-.poster .stat b { display: block; font-size: 40px; font-weight: 900; }
+.poster .stat b { display: block; font-size: 34px; font-weight: 900; }
 .poster .stat span { font-size: 15px; color: var(--mute); }
 .poster .tables { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 14px; }
 .poster .k-legend { font-size: 14px; margin-top: 6px; justify-content: center; }
