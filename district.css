@@ -126,7 +126,14 @@
   .asset-col, .towns-table { overflow-x: auto; }
   .asset-tbl { font-size: 0.74rem; }
   .asset-tbl th, .asset-tbl td { padding-left: 6px; padding-right: 6px; }
+  /* count under its %, so the 2050 column fits a phone without sideways scrolling */
+  .asset-tbl .tbl-count { display: block; }
+  .asset-tbl td:first-child, .asset-tbl th { white-space: normal; }
+  /* Growth only restates Today vs 2050; dropped on phones so the 2050 column fits */
+  .asset-tbl th:nth-child(5), .asset-tbl td:nth-child(5) { display: none; }
   .bond-steps { grid-template-columns: 1fr; }
+  /* the top bar is too tall to stay pinned on a phone */
+  .selector-bar { position: static; }
 }
 @media print { .asset-two-col { break-inside: avoid; } }
 .dm-leader { stroke: var(--text); stroke-width: 1; }
